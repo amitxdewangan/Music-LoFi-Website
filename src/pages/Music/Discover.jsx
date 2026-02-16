@@ -13,14 +13,14 @@ const Discover = () => {
     if (error) return <Error />;
 
     return (
-        <div className="flex flex-col">
-            <div className="w-full flex justify-between items-center sm:flex-row flex-col mt-4 mb-10">
+        <div className="flex flex-col justify-center items-center">
+            <div className="w-full flex justify-between items-center sm:flex-row flex-col mt-4 mb-10 mx-auto">
                 <h2 className="font-bold text-3xl text-white text-left">
                     Discover
                 </h2>
             </div>
 
-            <div className="flex flex-wrap sm:justify-start justify-center gap-8">
+            <div className="flex flex-wrap sm:justify-start items-center justify-center gap-10 mx-auto px-12">
                 {data?.tracks?.map((song, i) => (
                     <SongCard
                         key={song.key}
