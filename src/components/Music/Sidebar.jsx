@@ -6,10 +6,10 @@ import { RiCloseLine } from 'react-icons/ri';
 import logo from "../../assets/logo.svg";
 
 const links = [
-  { name: 'Discover', to: '/music', icon: HiOutlineHome },
-  { name: 'Around You', to: '/music/around-you', icon: HiOutlinePhotograph },
-  { name: 'Top Artists', to: '/music/top-artists', icon: HiOutlineUserGroup },
-  { name: 'Top Charts', to: '/music/top-charts', icon: HiOutlineHashtag },
+  { name: 'Discover', to: '/', icon: HiOutlineHome },
+  { name: 'Around You', to: '/around-you', icon: HiOutlinePhotograph },
+  { name: 'Top Artists', to: '/top-artists', icon: HiOutlineUserGroup },
+  { name: 'Top Charts', to: '/top-charts', icon: HiOutlineHashtag },
 ];
 
 const NavLinks = ({ handleClick }) => (
