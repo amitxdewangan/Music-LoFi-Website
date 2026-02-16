@@ -18,12 +18,12 @@ const TopChartCard = ({ song, i, isPlaying, activeSong, handlePauseClick, handle
     <div className="flex-1 flex flex-row justify-between items-center">
       <img className="w-20 h-20 rounded-lg" src={song?.images?.coverart} alt={song?.title} />
       <div className="flex-1 flex flex-col justify-center mx-3">
-        <Link to={`music/songs/${song.key}`}>
+        <Link to={`/music/songs/${song.key}`}>
           <p className="text-xl font-bold text-white">
             {song?.title}
           </p>
         </Link>
-        <Link to={`music/artists/${song?.artists[0].adamid}`}>
+        <Link to={`/music/artists/${song?.artists?.[0]?.adamid}`}>
           <p className="text-base text-gray-300 mt-1">
             {song?.subtitle}
           </p>
@@ -66,7 +66,7 @@ const TopPlay = () => {
       <div className="w-full flex flex-col">
         <div className="flex flex-row justify-between items-center">
           <h2 className="text-white font-bold text-2xl">Top Charts</h2>
-          <Link to="music/top-charts">
+          <Link to="/music/top-charts">
             <p className="text-gray-300 text-base cursor-pointer">See more</p>
           </Link>
         </div>
@@ -89,7 +89,7 @@ const TopPlay = () => {
       <div className="w-full flex flex-col mt-8">
         <div className="flex flex-row justify-between items-center">
           <h2 className="text-white font-bold text-2xl">Top Artists</h2>
-          <Link to="music/top-artists">
+          <Link to="/music/top-artists">
             <p className="text-gray-300 text-base cursor-pointer">See more</p>
           </Link>
         </div>
@@ -103,13 +103,13 @@ const TopPlay = () => {
           modules={[FreeMode]}
           className="mt-4"
         >
-          {topPlays?.slice(0, 5).map((artist) => (
+          {topPlays?.map((artist) => (
             <SwiperSlide
               key={artist?.key}
               style={{ width: '25%', height: 'auto' }}
               className="shadow-lg rounded-full animate-slideright"
             >
-              <Link to={`music/artists/${artist?.artists[0].adamid}`}>
+              <Link to={`/music/artists/${artist?.artists?.[0]?.adamid}`}>
                 <img src={artist?.images?.background} alt="Name" className="rounded-full w-full object-cover" />
               </Link>
             </SwiperSlide>
